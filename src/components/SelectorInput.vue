@@ -25,23 +25,30 @@ export default {
 
   methods: {
     addSelectorToList: function() {
-      this.checkSpecificity();
-      this.selectorList.push(this.selectorText);
+      this.selectorList.push(this.getSpecificity());
       this.selectorText = "";
     },
-    checkSpecificity: function() {
-      const split = this.selectorText.split(" ");
-      split.forEach(function(el) {
+
+    getSpecificity: function() {
+      const split = this.selectorText.split(" "); //separate into strings
+      const selectorObj = {};
+
+      this.assignNumber(split, selectorObj); //assign specificity numbers
+      selectorObj.entireSelector = this.selectorText; //add entire selector to obj
+      return selectorObj;
+    },
+
+    assignNumber: function(splitArr, obj) {
+      splitArr.forEach(function(el) {
         if (el.indexOf(".") === 0) {
-          console.log("this is a class ", el);
+          obj.class = obj.class >= 1 ? obj.class + 1 : 1;
         } else if (el.indexOf("#") === 0) {
-          console.log("this is an id", el);
+          obj.id = obj.id >= 1 ? obj.id + 1 : 1;
         } else {
-          console.log("this is an element");
+          obj.element = obj.element >= 1 ? obj.element + 1 : 1;
         }
       });
-    },
-    countSpecificity: function() {}
+    }
   }
 };
 </script>
