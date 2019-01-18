@@ -1,0 +1,7 @@
+$margins: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45);
+
+@each $margin in $margins {
+	.h-margin-top-#{$margin} {
+		margin-top: #{$margin}px;
+	}
+}

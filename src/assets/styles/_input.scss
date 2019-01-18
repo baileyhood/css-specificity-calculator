@@ -1,0 +1,46 @@
+//Inputs
+
+.c-input {
+
+	&__container {
+		border: 1px solid $color-light-gray;
+	}
+
+	&__container,
+	&__list {
+		padding: 15px;
+		display: flex;
+	}
+
+	&__item {
+		flex-basis: 75%;
+		padding: 25px;
+	}
+
+	&__button {
+		background-color: $color-pink;
+		color: #fff;
+		flex-basis: 25%;
+		text-transform: uppercase;
+	}
+
+	&__item,
+	&__button {
+		border: none;
+	}
+
+	&__list {
+		border-bottom: 1px solid $color-light-gray;
+		border-left: 1px solid $color-light-gray;
+		border-right: 1px solid $color-light-gray;
+		flex-direction: column;
+	}
+
+	&__list-item {
+		align-items: center;
+		display: flex;
+		font-size: 24px;
+		justify-content: space-between;
+	}
+
+}
