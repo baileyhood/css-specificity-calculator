@@ -17,6 +17,21 @@ li {
 	list-style: none;
 }
 
+//Links
+
+.c-link {
+	color: $color-yellow;
+	display: block;
+	font-size: 15px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	position: relative;
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+
+//Typograhpy
+
 .c-headline {
 	font-weight: 200;
 	font-size: 70px;

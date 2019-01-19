@@ -1,21 +1,38 @@
 <template>
   <div>
-    <h3 class="c-subheadline">ENTER YOUR SELECTOR BELOW</h3>
+    <div class="h-flex h-align-items-center h-justify-content-space-between">
+      <h3 class="c-subheadline">ENTER YOUR SELECTOR BELOW</h3>
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity"
+        target="_blank"
+        class="c-link"
+      >CSS Specificity Docs</a>
+    </div>
+
     <!-- NOTE: v-model allows two-way data-binding: model & view are both updated together (keeps each in sync) -->
     <div class="c-input__container">
-      <input class="c-input__item" v-model="selectorText" placeholder="Enter selector" type="text">
+      <input
+        class="c-input__item"
+        v-model="selectorText"
+        @keyup.enter="addSelectorToList"
+        placeholder="Enter selector"
+        type="text"
+      >
       <button class="c-input__button" v-on:click="addSelectorToList" type="submit">Submit</button>
     </div>
+    <sort-list v-bind:selectorList="selectorList"></sort-list>
     <selector-list v-bind:selectorList="selectorList"></selector-list>
   </div>
 </template>
 
 <script>
 import SelectorList from "./SelectorList.vue";
+import SortList from "./SortList.vue";
 
 export default {
   components: {
-    "selector-list": SelectorList
+    "selector-list": SelectorList,
+    "sort-list": SortList
   },
 
   data: function() {
@@ -32,7 +49,7 @@ export default {
     },
 
     getSpecificity: function() {
-      const split = this.selectorText.split(/\s|(?=\.)|(?=#)/); //separate into strings
+      const split = this.selectorText.split(/\s|(?=\.)|(?=#)/); //separate into strings by " ", "#" and "."
       const selectorObj = {};
 
       this.getSpecificityNumber(split, selectorObj); //assign specificity numbers
