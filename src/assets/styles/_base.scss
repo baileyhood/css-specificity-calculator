@@ -9,6 +9,10 @@ body {
 	padding: 25px;
 }
 
+a {
+	text-decoration: none;
+}
+
 ul {
 	padding-left: 0;
 }
@@ -35,6 +39,7 @@ li {
 .c-headline {
 	font-weight: 200;
 	font-size: 70px;
+	margin-top: 0;
 	position: relative;
 
 	&__divider {
@@ -50,6 +55,8 @@ li {
 		}
 	}
 }
+
+.c-link {}
 
 .c-subheadline {
 	font-size: 16px;

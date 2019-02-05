@@ -2,11 +2,7 @@
   <div>
     <div class="h-flex h-align-items-center h-justify-content-space-between">
       <h3 class="c-subheadline">ENTER YOUR SELECTOR BELOW</h3>
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity"
-        target="_blank"
-        class="c-link"
-      >CSS Specificity Docs</a>
+      <sort-list v-bind:selectorList="selectorList"></sort-list>
     </div>
 
     <!-- NOTE: v-model allows two-way data-binding: model & view are both updated together (keeps each in sync) -->
@@ -20,7 +16,6 @@
       >
       <button class="c-input__button" v-on:click="addSelectorToList" type="submit">Submit</button>
     </div>
-    <sort-list v-bind:selectorList="selectorList"></sort-list>
     <selector-list v-bind:selectorList="selectorList"></selector-list>
   </div>
 </template>
@@ -61,7 +56,6 @@ export default {
       obj[type] = obj[type] >= 1 ? obj[type] + 1 : 1;
     },
 
-    // TODO: account for combinator selectors. Possibly try RegEx
     getSpecificityNumber: function(splitArr, obj) {
       const vm = this;
       splitArr.forEach(function(selector) {
