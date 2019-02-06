@@ -39,8 +39,11 @@ export default {
 
   methods: {
     addSelectorToList: function() {
-      this.selectorList.push(this.getSpecificity());
-      this.selectorText = "";
+      //only when text has been entered
+      if (this.selectorText) {
+        this.selectorList.push(this.getSpecificity());
+        this.selectorText = ""; //clear input
+      }
     },
 
     getSpecificity: function() {
@@ -49,6 +52,10 @@ export default {
 
       this.getSpecificityNumber(split, selectorObj); //assign specificity numbers
       selectorObj.entireSelector = this.selectorText; //add entire selector to obj
+      selectorObj.specficityNumber = `${selectorObj.id ||
+        0}${selectorObj.class || 0}${
+        selectorObj.element || 0 //add entire specicifty number to obj to pass to sortList component
+      }`;
       return selectorObj;
     },
 
