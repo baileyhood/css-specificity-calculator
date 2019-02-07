@@ -9,10 +9,12 @@ export default {
   props: ["selectorList"],
 
   methods: {
+    sortedList: function() {
+      this.$emit("update-list", this.sortList());
+    },
+
     sortList: function() {
-      this.selectorList.forEach(el => {
-        window.console.log(el);
-      });
+      window.console.log(this.selectorList);
     }
   }
 };
