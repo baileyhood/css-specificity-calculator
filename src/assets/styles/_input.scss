@@ -5,6 +5,10 @@
 	&__container {
 		border: 1px solid $color-light-gray;
 		padding: 15px;
+
+		@media screen and (max-width: 640px) {
+			flex-direction: column;
+		}
 	}
 
 	&__container,
@@ -15,6 +19,10 @@
 	&__item {
 		flex-basis: 75%;
 		padding: 25px;
+
+		@media screen and (max-width: 640px) {
+			padding: 15px;
+		}
 	}
 
 	&__button {
@@ -22,6 +30,10 @@
 		color: #fff;
 		flex-basis: 25%;
 		text-transform: uppercase;
+
+		@media screen and (max-width: 640px) {
+			display: none;
+		}
 	}
 
 	&__item,

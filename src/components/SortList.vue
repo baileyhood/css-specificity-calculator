@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button v-on:click="sortList">Sort List</button>
+    <button class="button button--sort" v-on:click="sortList">Sort List</button>
   </div>
 </template>
 
@@ -14,7 +14,9 @@ export default {
     },
 
     sortList: function() {
-      window.console.log(this.selectorList);
+      this.selectorList.sort(function(a, b) {
+        return a.specificityNumber - b.specificityNumber;
+      });
     }
   }
 };

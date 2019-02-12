@@ -2,7 +2,11 @@
   <div>
     <div class="h-flex h-align-items-center h-justify-content-space-between">
       <h3 class="c-subheadline">ENTER YOUR SELECTOR BELOW</h3>
-      <sort-list v-bind:selectorList="selectorList" @update-list="updateList"></sort-list>
+      <sort-list
+        v-if="selectorList.length"
+        v-bind:selectorList="selectorList"
+        @update-list="updateList"
+      ></sort-list>
     </div>
 
     <!-- NOTE: v-model allows two-way data-binding: model & view are both updated together (keeps each in sync) -->
@@ -52,7 +56,7 @@ export default {
 
       this.getSpecificityNumber(split, selectorObj); //assign specificity numbers
       selectorObj.entireSelector = this.selectorText; //add entire selector to obj
-      selectorObj.specficityNumber = `${selectorObj.id ||
+      selectorObj.specificityNumber = `${selectorObj.id ||
         0}${selectorObj.class || 0}${
         selectorObj.element || 0 //add entire specicifty number to obj to pass to sortList component
       }`;
@@ -76,8 +80,8 @@ export default {
       });
     },
 
-    updateList: function(e) {
-      this.selectorList = e;
+    updateList: function(sortedList) {
+      this.selectorList = sortedList;
     }
   } //methods
 }; //export default
