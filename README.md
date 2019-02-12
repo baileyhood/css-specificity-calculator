@@ -1,4 +1,5 @@
 # css-specificity-calculator
+A small Vue app that calculates your selector's specificity. 
 
 ## Project setup
 ```
