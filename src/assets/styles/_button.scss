@@ -1,0 +1,11 @@
+.button {
+	cursor: pointer;
+}
+
+.button--sort {
+	background-color: transparent;
+	color: $color-yellow;
+	border: none;
+	font-size: 16px;
+	text-transform: uppercase;
+}

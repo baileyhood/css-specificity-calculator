@@ -4,12 +4,59 @@ body {
 	color: $color-light-gray;
 	font-family: $font-family-base;
 	font-size: $font-size-base;
-	font-weight: 300;
+	font-weight: 200;
 	line-height: 1.4;
 	padding: 25px;
 }
 
-h1 {
-	font-weight: 300;
-	font-size: 64px;
+a {
+	text-decoration: none;
+}
+
+ul {
+	padding-left: 0;
+}
+
+li {
+	list-style: none;
+}
+
+//Links
+
+.c-link {
+	color: $color-yellow;
+	display: block;
+	font-size: 15px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	position: relative;
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+
+//Typograhpy
+
+.c-headline {
+	font-weight: 200;
+	font-size: 70px;
+	margin-top: 0;
+	position: relative;
+
+	&__divider {
+		&:after {
+			background-color: $color-pink;
+			bottom: -15px;
+			content: '';
+			height: 1px;
+			left: 0;
+			max-width: 100px;
+			position: absolute;
+			width: 100%;
+		}
+	}
+}
+
+.c-subheadline {
+	font-size: 16px;
+	letter-spacing: 1px;
 }

@@ -1,0 +1,23 @@
+.h-text-color-light-gray {
+	color: $color-light-gray;
+}
+
+.h-flex {
+	display: flex;
+}
+
+.h-align-items-center {
+	align-items: center;
+}
+
+.h-justify-content-space-between {
+	justify-content: space-between;
+}
+
+$margins: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45);
+
+@each $margin in $margins {
+	.h-margin-top-#{$margin} {
+		margin-top: #{$margin}px;
+	}
+}
