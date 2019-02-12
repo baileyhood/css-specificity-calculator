@@ -1,4 +1,4 @@
-# css-specificity-calculator
+# CSS Specificity Calculator | Vue.js
 I've been wanting to learn Vue for a while so what better way to learn than building a simple app. This app calculates your CSS selector's specificity. Check out the [demo](https://css-specificity-calculator.netlify.com/). 
 
 ## Project setup
